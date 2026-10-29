@@ -70,8 +70,6 @@ flowchart LR
     Doctor --> UC3
     Doctor --> UC4
     Doctor --> UC5
-    UC3 -.-> UC4
-    UC3 -.-> UC5
 ```
 
-**Note:** The diagram uses a Mermaid flowchart to represent the actors and use cases.
+Note: The diagram uses a Mermaid flowchart to represent the actors and use cases.
