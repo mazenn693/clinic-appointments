@@ -1,0 +1,35 @@
+
+# 3. Candidate Classes — Doctor Appointment Booking System
+
+## 3.1 Purpose
+
+This document identifies candidate classes for the Doctor Appointment Booking System based on the system requirements and use cases.
+
+Candidates are classified as Explicit, Inferred, or Rejected.
+
+- **Explicit:** Directly mentioned or clearly required by the specification.
+- **Inferred:** Not directly specified as a class, but needed to represent the system's behavior or structure.
+- **Rejected:** Considered as a candidate but not needed as a separate class in the current design.
+
+## 3.2 Candidate Classes
+
+| Class | Evidence | Classification |
+|---|---|---|
+| Patient | R1 and R2 specify that a patient views doctor availability and books appointments. R4 limits the patient's upcoming appointments. | Explicit |
+| Doctor | R1 specifies that patients view a doctor's availability. R3 specifies that doctors accept or decline appointment requests. | Explicit |
+| Appointment | R2 requires booking appointments, and R3 requires accepting or declining appointment requests. | Inferred |
+| TimeSlot | R1 requires displaying available days and times, and R2 requires booking an available time slot. | Inferred |
+| AppointmentStatus | R3 requires appointment requests to be accepted or declined. The booking flow also uses Pending status. | Inferred |
+| Availability | R1 requires representing a doctor's available days and times. | Inferred |
+| MedicalRecord | R5 specifies that patient medical data must be accessible only to authorized staff. | Inferred |
+| Notification | The use cases require informing the patient or doctor about booking results and decisions. | Inferred |
+| Admin | The current use cases identify Patient and Doctor as actors, and no administrator use case is specified. | Rejected |
+| Payment | The requirements and use cases do not specify payments or billing. | Rejected |
+
+## 3.3 Design Decision
+
+The initial class diagram will focus on Patient, Doctor, Appointment, TimeSlot, and Availability.
+
+AppointmentStatus can be represented as an enumeration in the class diagram.
+
+MedicalRecord and Notification may be considered for future extensions, but they are not necessary for the minimum booking workflow. Admin and Payment are excluded from the current design because they are outside the specified scope.
